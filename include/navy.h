@@ -8,11 +8,6 @@
 #ifndef MY_H_
 #define MY_H_
 
-#define SUCCESS 0
-#define ERROR 84
-#define FALSE 0
-#define TRUE 1
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -26,5 +21,16 @@
 #include <errno.h>
 
 int start();
+void display_h(void);
+
+#define SUCCESS 0
+#define ERROR 84
+
+#define FALSE 0
+#define TRUE 1
+
+#define USE "./navy [first_player_pid] navy_positions\n"
+#define FPP "only for the 2nd player.  pid of the first player.\n"
+#define NP "file representing the positions of the ships.\n"
 
 #endif
