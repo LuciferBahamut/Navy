@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** my.h
+** navy
 ** File description:
 ** my.h
 */
@@ -10,6 +10,8 @@
 
 #define SUCCESS 0
 #define ERROR 84
+#define FALSE 0
+#define TRUE 1
 
 #include <stdio.h>
 #include <sys/types.h>

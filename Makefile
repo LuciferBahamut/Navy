@@ -1,20 +1,20 @@
 ##
 ## EPITECH PROJECT, 2019
-## makefile
+## navy
 ## File description:
 ## project
 ##
 
 NAME	=	navy
 
-SRC	=	src/main.c \
+SRC	=	src/main.c 	\
 		src/start.c
 
 CC	=	gcc
 
 DEFLAGS	=	-W -Wextra -Wall -g3
 
-CPPFLAGS	=	-I./include/
+CPPFLAGS=	-I./include/
 
 CFFLAGS	=	tests/unit_tests.c -I./include --coverage -lcriterion
 

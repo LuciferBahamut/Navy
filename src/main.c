@@ -1,13 +1,13 @@
 /*
 ** EPITECH PROJECT, 2020
-** main
+** navy
 ** File description:
 ** main
 */
 
-#include "my.h"
+#include "navy.h"
 
 int main()
 {
-    return (SUCESS);
+    return (SUCCESS);
 }
