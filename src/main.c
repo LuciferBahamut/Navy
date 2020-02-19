@@ -7,7 +7,7 @@
 
 #include "navy.h"
 
-int main()
+int main(int ac, char **av)
 {
-    return (SUCCESS);
+    return (start(ac, av));
 }

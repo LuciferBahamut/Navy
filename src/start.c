@@ -7,7 +7,9 @@
 
 #include "navy.h"
 
-int start()
+int start(int ac, char **av)
 {
+    if (error_handling(ac, av) == ERROR)
+        return (ERROR);
     return (SUCCESS);
 }

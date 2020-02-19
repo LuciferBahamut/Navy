@@ -20,8 +20,10 @@
 #include <grp.h>
 #include <errno.h>
 
-int start();
+int start(int ac, char **av);
+
 void display_h(void);
+int error_handling(int ac, char **av);
 
 #define SUCCESS 0
 #define ERROR 84
@@ -32,5 +34,7 @@ void display_h(void);
 #define USE "./navy [first_player_pid] navy_positions\n"
 #define FPP "only for the 2nd player.  pid of the first player.\n"
 #define NP "file representing the positions of the ships.\n"
+
+#define STR_ERROR_ARG "this program must take 2 or 3 arguments\n"
 
 #endif
