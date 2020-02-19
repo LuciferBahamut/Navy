@@ -21,9 +21,15 @@
 #include <errno.h>
 
 int start(int ac, char **av);
+<<<<<<< HEAD
 
 void display_h(void);
 int error_handling(int ac, char **av);
+=======
+void display_h(void);
+void my_putchar(char c);
+int my_putstr(char const *str);
+>>>>>>> fc5cf7327d51da7b9dcf77f1ad7fc782759f3d3f
 
 #define SUCCESS 0
 #define ERROR 84
