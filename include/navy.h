@@ -20,8 +20,10 @@
 #include <grp.h>
 #include <errno.h>
 
-int start();
+int start(int ac, char **av);
 void display_h(void);
+void my_putchar(char c);
+int my_putstr(char const *str);
 
 #define SUCCESS 0
 #define ERROR 84

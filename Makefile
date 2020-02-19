@@ -7,8 +7,11 @@
 
 NAME	=	navy
 
-SRC	=	src/main.c 	\
-		src/start.c
+SRC	=	src/main.c 		\
+		src/start.c		\
+		src/display_h.c		\
+		src/my_putchar.c	\
+		src/my_putstr.c
 
 CC	=	gcc
 
