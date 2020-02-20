@@ -10,14 +10,15 @@ NAME	=	navy
 SRC	=	src/main.c 		\
 		src/start.c		\
 		src/split_pos.c		\
+		src/player_one.c        \
 		src/error_handling.c	\
 		src/boats_handling.c	\
+		src/check_pos.c		\
 		src/display_h.c		\
 		util/my_strlen.c	\
 		util/my_putchar.c	\
 		util/my_putstr.c	\
 		util/my_strcmp.c	\
-		src/player_one.c	\
 		util/my_put_nbr.c	\
 		util/my_atoi.c
 
