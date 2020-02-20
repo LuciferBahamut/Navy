@@ -11,8 +11,8 @@ int player_one(void)
 {
     int pid = getpid();
 
-    my_putstr("My_pid: ");
+    my_putstr("my_pid: ");
     my_put_nbr(pid);
-    my_putstr("\nwaiting for enemy connexion...\n");
+    my_putstr("\nwaiting for enemy connection...\n");
     return (SUCCESS);
 }
