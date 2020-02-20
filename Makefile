@@ -9,17 +9,14 @@ NAME	=	navy
 
 SRC	=	src/main.c 		\
 		src/start.c		\
-<<<<<<< HEAD
+		src/split_pos.c		\
 		src/error_handling.c	\
+		src/boats_handling.c	\
 		src/display_h.c		\
-		lib/my_strlen.c		\
-		lib/my_putchar.c	\
-		lib/my_putstr.c
-=======
-		src/display_h.c		\
-		src/my_putchar.c	\
-		src/my_putstr.c
->>>>>>> fc5cf7327d51da7b9dcf77f1ad7fc782759f3d3f
+		util/my_strlen.c	\
+		util/my_putchar.c	\
+		util/my_putstr.c	\
+		util/my_strcmp.c
 
 CC	=	gcc
 

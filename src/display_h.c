@@ -7,7 +7,7 @@
 
 #include "navy.h"
 
-void display_h(void)
+int display_h(void)
 {
     my_putstr("USAGE\n     ");
     my_putstr(USE);
@@ -15,5 +15,6 @@ void display_h(void)
     my_putstr("     first_player_pid:  ");
     my_putstr(FPP);
     my_putstr("     navy_positions:  ");
-    my_putstr(NP);    
+    my_putstr(NP);
+    return (SUCCESS);
 }
