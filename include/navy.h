@@ -52,5 +52,6 @@ int my_atoi(char const *str);
 #define STR_ERROR_OPEN "could not open or read file\n"
 #define STR_ERROR_NBR "there must be 4 boats in the file\n"
 #define STR_ERROR_SIZE_B "the size of the boats are invalid\n"
+#define STR_ERROR_OUT "one or more boat is outside the map\n"
 
 #endif
