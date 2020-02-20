@@ -13,5 +13,6 @@ int start(int ac, char **av)
         return (display_h());
     if (error_handling(ac, av) == ERROR)
         return (ERROR);
+    player_one();
     return (SUCCESS);
 }

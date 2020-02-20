@@ -16,7 +16,9 @@ SRC	=	src/main.c 		\
 		util/my_strlen.c	\
 		util/my_putchar.c	\
 		util/my_putstr.c	\
-		util/my_strcmp.c
+		util/my_strcmp.c	\
+		src/player_one.c	\
+		util/my_put_nbr.c
 
 CC	=	gcc
 

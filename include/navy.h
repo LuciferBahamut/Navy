@@ -22,6 +22,7 @@
 
 int start(int ac, char **av);
 char **split_pos(char *buffer);
+int player_one(void);
 
 int display_h(void);
 int error_handling(int ac, char **av);
@@ -32,6 +33,7 @@ void my_putchar(char c);
 int my_putstr(char const *str);
 int my_strlen(char const *str);
 int my_strcmp(char const *str1, char const *str2);
+int my_put_nbr(int nb);
 
 #define SUCCESS 0
 #define ERROR 84
