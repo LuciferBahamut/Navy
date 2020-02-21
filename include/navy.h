@@ -36,6 +36,7 @@ int my_strlen(char const *str);
 int my_strcmp(char const *str1, char const *str2);
 int my_put_nbr(int nb);
 int my_atoi(char const *str);
+void write_error(char *str);
 
 #define SUCCESS 0
 #define ERROR 84

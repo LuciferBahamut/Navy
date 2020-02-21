@@ -20,7 +20,8 @@ SRC	=	src/main.c 		\
 		util/my_putstr.c	\
 		util/my_strcmp.c	\
 		util/my_put_nbr.c	\
-		util/my_atoi.c
+		util/my_atoi.c		\
+		util/write_error.c
 
 CC	=	gcc
 
