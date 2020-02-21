@@ -34,18 +34,23 @@ int is_in_map(char **pos)
 
 int is_right_size(char **pos)
 {
-    for (int i = 0, j = 2; i != 4; i++, j++) {
+    for (int i = 0, j = 1; i != 4; i++, j++) {
         if (pos[i][2] == pos[i][5])
-            if ((pos[i][6] - pos[i][3]) != j - 1) {
+            if ((pos[i][6] - pos[i][3]) != j) {
                 write_error(STR_ERROR_SIZE_B);
                 return (ERROR);
             }
         if (pos[i][2] != pos[i][5])
-            if ((pos[i][5] - pos[i][2]) != j - 1) {
+            if ((pos[i][5] - pos[i][2]) != j) {
                 write_error(STR_ERROR_SIZE_B);
                 return (ERROR);
             }
     }
+    return (SUCCESS);
+}
+
+int is_overlapping(char **pos)
+{
     return (SUCCESS);
 }
 
@@ -59,6 +64,8 @@ int check_pos(char **pos)
     if (is_right_size(pos) == ERROR)
         return (ERROR);
     if (is_in_map(pos) == ERROR)
+        return (ERROR);
+    if (is_overlapping(pos) == ERROR)
         return (ERROR);
     return (SUCCESS);
 }
