@@ -64,7 +64,4 @@ void fill_map_w_boats(map_t *m, char **pos)
         else
             fill_line(m, pos, i, pos[i][0]);
     }
-    
-    for (int i = 0; i != 10 ; i++)
-        printf("%s\n", m->map[i]);
 }
