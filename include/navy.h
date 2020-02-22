@@ -43,7 +43,8 @@ int my_put_nbr(int nb);
 int my_atoi(char const *str);
 void write_error(char *str);
 
-void fill_map(map_t *m);
+void fill_empty_map(map_t *m);
+void fill_map_w_boats(map_t *m, char **pos);
 
 #define SUCCESS 0
 #define ERROR 84
@@ -61,5 +62,6 @@ void fill_map(map_t *m);
 #define STR_ERROR_NBR "there must be 4 boats in the file\n"
 #define STR_ERROR_SIZE_B "the size of the boats are invalid\n"
 #define STR_ERROR_OUT "one or more boat is outside the map\n"
+#define STR_ERROR_OVERLAP "boats are overlapping\n"
 
 #endif

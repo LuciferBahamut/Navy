@@ -53,7 +53,12 @@ int is_overlapping(char **pos)
 {
     map_t *m = malloc(sizeof(map_t));
 
-    fill_map(m);
+    fill_empty_map(m);
+    fill_map_w_boats(m, pos);
+    if (m->map == NULL) {
+        write_error(STR_ERROR_OVERLAP);
+        return (ERROR);
+    }
     return (SUCCESS);
 }
 

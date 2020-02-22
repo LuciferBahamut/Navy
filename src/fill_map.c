@@ -9,36 +9,32 @@
 
 void fill_first_line(map_t *m)
 {
-    for (int i = 0; i != 15; i++) {
+    char letter = 'A';
+
+    for (int i = 0; i != 17; i++) {
         if (i == 2)
             i++;
         m->map[0][i] = ' ';
     }
     m->map[0][1] = '|';
-    m->map[0][2] = 'A';
-    m->map[0][4] = 'B';
-    m->map[0][6] = 'C';
-    m->map[0][8] = 'D';
-    m->map[0][10] = 'E';
-    m->map[0][12] = 'F';
-    m->map[0][14] = 'G';
-    m->map[0][16] = 'H';
+    for (int i = 2; i != 17; i++) {
+        if (i % 2 == 0) {
+            m->map[0][i] = letter;
+            letter++;
+        }
+    }
     m->map[0][17] = '\0';
 }
 
 void fill_nbr(map_t *m)
 {
-    m->map[0][2] = '1';
-    m->map[1][2] = '2';
-    m->map[2][2] = '3';
-    m->map[3][2] = '4';
-    m->map[4][2] = '5';
-    m->map[5][2] = '6';
-    m->map[6][2] = '7';
-    m->map[7][2] = '8';
+    char number = '1';
+
+    for (int i = 2; i != 10; i++, number++)
+        m->map[i][0] = number;
 }
 
-void fill_map(map_t *m)
+void fill_empty_map(map_t *m)
 {
     m->map = malloc(sizeof(char *) * 10);
     for (int i = 0; i != 10; i++)
@@ -46,7 +42,7 @@ void fill_map(map_t *m)
     fill_first_line(m);
     fill_nbr(m);
     for (int i = 2; i != 10; i++)
-        m->map[i][3] = '|';
+        m->map[i][1] = '|';
     for (int i = 0; i != 17; i++) {
         m->map[1][i] = '-';
         if (i == 1)
@@ -54,5 +50,5 @@ void fill_map(map_t *m)
     }
     for (int i = 2; i != 10; i++)
         for (int j = 2; j != 17; j++)
-            m->map[i][j] = '.';
+            m->map[i][j] = '.';    
 }
