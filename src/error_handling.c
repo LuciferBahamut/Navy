@@ -21,7 +21,7 @@ int error_handling_player1(char *path)
     char **pos;
 
     if (fd == -1 || rd < 0) {
-        write(2, STR_ERROR_OPEN, my_strlen(STR_ERROR_OPEN));
+        write_error(STR_ERROR_OPEN);
         return (ERROR);
     }
     if (count_boats(buffer) == ERROR) {
@@ -46,7 +46,7 @@ int error_handling_player2(char **av)
 int error_handling(int ac, char **av)
 {
     if (ac < 2 || ac > 3) {
-        write(2, STR_ERROR_ARG, my_strlen(STR_ERROR_ARG));
+        write_error(STR_ERROR_ARG);
         return (ERROR);
     }
     if (ac == 2)
