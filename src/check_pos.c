@@ -55,11 +55,6 @@ int is_overlapping(char **pos)
 
     fill_empty_map(m);
     fill_map_w_boats(m, pos);
-    if (m->map == NULL) {
-        write_error(STR_ERROR_OVERLAP);
-        free(m);
-        return (ERROR);
-    }
     return (SUCCESS);
 }
 
