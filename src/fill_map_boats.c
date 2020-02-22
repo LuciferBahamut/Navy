@@ -38,23 +38,21 @@ void fill_col(map_t *m, char **pos, int line, char nb)
     int nb2 = catoi(pos[line][6]) + 1;
 
     for (int i = 2; i != 17; i++)
-        if (m->map[0][i] == pos[line][2]) {
-            m->map[nb1][i] = nb;
-            for (int j = nb1; j != nb2; j++)
+        if (m->map[0][i] == pos[line][2])
+            for (int j = nb1; j != nb2 + 1; j++)
                 m->map[j][i] = nb;
-            m->map[nb2][i] = nb;
-        }
 }
 
 void fill_line(map_t *m, char **pos, int line, char nb)
 {
     int nb1 = catoi(pos[line][3]) + 1;
+    int line_nbr = nb1;
     int nb2 = pos[line][5] - pos[line][2] + 1;
 
     for (int i = 2; i != 17; i++)
         if (m->map[0][i] == pos[line][2])
             for (int j = 0; j != nb2; j++, nb1 += 2)
-                m->map[i][nb1] = nb;
+                m->map[line_nbr][nb1] = nb;
 }
 
 void fill_map_w_boats(map_t *m, char **pos)
@@ -66,6 +64,8 @@ void fill_map_w_boats(map_t *m, char **pos)
             m->map[catoi(pos[0][6]) + 1][i] = '2';
     }
     for (int i = 1; i != 4; i++) {
+        if (m->map == NULL)
+            break;
         if (pos[i][2] == pos[i][5])
             fill_col(m, pos, i, pos[i][0]);
         else
