@@ -23,6 +23,9 @@
 typedef struct map
 {
     char **map;
+    char **map_e;
+    char **map2;
+    char **map2_e;
 } map_t;
 
 int start(int ac, char **av);
