@@ -20,6 +20,11 @@
 #include <grp.h>
 #include <errno.h>
 
+typedef struct map
+{
+    char **map;
+} map_t;
+
 int start(int ac, char **av);
 char **split_pos(char *buffer);
 int player_one(void);
@@ -37,6 +42,8 @@ int my_strcmp(char const *str1, char const *str2);
 int my_put_nbr(int nb);
 int my_atoi(char const *str);
 void write_error(char *str);
+
+void fill_map(map_t *m);
 
 #define SUCCESS 0
 #define ERROR 84

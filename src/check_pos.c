@@ -51,6 +51,9 @@ int is_right_size(char **pos)
 
 int is_overlapping(char **pos)
 {
+    map_t *m = malloc(sizeof(map_t));
+
+    fill_map(m);
     return (SUCCESS);
 }
 
@@ -58,7 +61,7 @@ int check_pos(char **pos)
 {
     for (int i = 2, j = 0; j != 4; j++, i++)
         if (my_atoi(pos[j]) != i) {
-            write(2, STR_ERROR_SIZE_B, my_strlen(STR_ERROR_SIZE_B));
+            write_error(STR_ERROR_SIZE_B);
             return (ERROR);
         }
     if (is_right_size(pos) == ERROR)
