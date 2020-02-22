@@ -49,6 +49,10 @@ void fill_empty_map(map_t *m)
             m->map[1][i] = '+';
     }
     for (int i = 2; i != 10; i++)
-        for (int j = 2; j != 17; j++)
-            m->map[i][j] = '.';    
+        for (int j = 2; j != 17; j++) {
+            if (j % 2 == 0)
+                m->map[i][j] = '.';
+            else
+                m->map[i][j] = ' ';
+        }
 }
