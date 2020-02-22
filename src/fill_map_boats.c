@@ -32,6 +32,31 @@ int catoi(char c)
     return (nb);
 }
 
+int catoi1(char c)
+{
+    int nb = 0;
+
+    switch (c) {
+    case 'A' : nb = 2;
+        break;
+    case 'B' : nb = 4;
+        break;
+    case 'C' : nb = 6;
+        break;
+    case 'D' : nb = 8;
+        break;
+    case 'E' : nb = 10;
+        break;
+    case 'F' : nb = 12;
+        break;
+    case 'G' : nb = 14;
+        break;
+    case 'H' : nb = 16;
+        break;
+    }
+    return (nb);
+}
+
 void fill_col(map_t *m, char **pos, int line, char nb)
 {
     int nb1 = catoi(pos[line][3]) + 1;
@@ -45,14 +70,14 @@ void fill_col(map_t *m, char **pos, int line, char nb)
 
 void fill_line(map_t *m, char **pos, int line, char nb)
 {
-    int nb1 = catoi(pos[line][3]) + 1;
-    int line_nbr = nb1;
-    int nb2 = pos[line][5] - pos[line][2] + 1;
+    int li = catoi(pos[line][3]) + 1;
+    int co = catoi1(pos[line][2]);
+    int dif = pos[line][5] - pos[line][2] + 1;
 
     for (int i = 2; i != 17; i++)
         if (m->map[0][i] == pos[line][2])
-            for (int j = 0; j != nb2; j++, nb1 += 2)
-                m->map[line_nbr][nb1] = nb;
+            for (int j = 0; j != dif; co += 2, j++)
+                m->map[li][co] = nb;
 }
 
 void fill_map_w_boats(map_t *m, char **pos)
@@ -71,6 +96,4 @@ void fill_map_w_boats(map_t *m, char **pos)
         else
             fill_line(m, pos, i, pos[i][0]);
     }
-    for (int i = 0; m->map[i]; i++)
-        printf("%s\n", m->map[i]);
 }
