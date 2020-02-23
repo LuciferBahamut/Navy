@@ -15,7 +15,7 @@ int count_boats(char *buffer)
         if (buffer[i] == '\n')
             n++;
     if (n != 4) {
-        write(2, STR_ERROR_NBR, my_strlen(STR_ERROR_NBR));
+        write_error(STR_ERROR_NBR);
         return (ERROR);
     }
     return (SUCCESS);
