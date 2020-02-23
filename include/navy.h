@@ -29,9 +29,20 @@ typedef struct map
     char **map2_e;
 } map_t;
 
+typedef struct player
+{
+    int pid;
+    int pid_2;
+    int ppid;
+    int check;
+    int temp;
+} player_t;
+
+
 int start(int ac, char **av);
 char **split_pos(char *buffer);
 int player_one(void);
+void player_two(char **av);
 
 int display_h(void);
 int error_handling(int ac, char **av);
@@ -49,6 +60,8 @@ void write_error(char *str);
 
 void fill_empty_map(map_t *m);
 void fill_map_w_boats(map_t *m, char **pos);
+
+void handl_sig(int sig, siginfo_t *inf, void *context);
 
 #define SUCCESS 0
 #define ERROR 84

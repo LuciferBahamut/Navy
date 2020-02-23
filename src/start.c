@@ -7,12 +7,27 @@
 
 #include "navy.h"
 
+player_t *p;
+
+void fill_struct(void)
+{
+    p->pid_2 = 0;
+    p->check = 0;
+    p->temp = 0;
+}
+
 int start(int ac, char **av)
 {
+    p = malloc(sizeof(player_t));
     if (ac == 2 && my_strcmp(av[1], "-h"))
         return (display_h());
     if (error_handling(ac, av) == ERROR)
         return (ERROR);
-    player_one();
+    fill_struct();
+    if (ac == 2)
+        player_one();
+    if (ac == 3)
+        player_two(av);
+    free(p);
     return (SUCCESS);
 }
