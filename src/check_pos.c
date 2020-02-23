@@ -9,7 +9,7 @@
 
 int is_in_map(char **pos)
 {
-    for(int i = 0; i != 4; i++) {
+    for (int i = 0; i != 4; i++) {
         if (pos[i][2] < 'A' || pos[i][2] > 'H'){
             write_error(STR_ERROR_OUT);
             return (ERROR);
@@ -19,7 +19,7 @@ int is_in_map(char **pos)
             return (ERROR);
         }
     }
-    for(int i = 0; i != 4; i++) {
+    for (int i = 0; i != 4; i++) {
         if (pos[i][3] < '1' || pos[i][3] > '8'){
             write_error(STR_ERROR_OUT);
             return (ERROR);
