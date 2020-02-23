@@ -7,6 +7,8 @@
 
 #include "navy.h"
 
+map_t *m;
+
 int is_in_map(char **pos)
 {
     for (int i = 0; i != 4; i++) {
@@ -76,11 +78,10 @@ int comp_tab_nb(int *tab)
 
 int is_overlapping(char **pos)
 {
-    map_t *m = malloc(sizeof(map_t));
     int *tab = malloc(sizeof(int) * 4);
 
-    fill_empty_map(m);
-    fill_map_w_boats(m, pos);
+    m->map = fill_empty_map(m->map);
+    m->map = fill_map_w_boats(m->map, pos);
     for (int i = 0; m->map[i]; i++)
         for (int j = 0; m->map[i][j]; j++) {
             if (m->map[i][j] == '2')

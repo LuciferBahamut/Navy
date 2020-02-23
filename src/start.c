@@ -8,6 +8,7 @@
 #include "navy.h"
 
 player_t *p;
+map_t *m;
 
 void fill_struct(void)
 {
@@ -19,15 +20,16 @@ void fill_struct(void)
 int start(int ac, char **av)
 {
     p = malloc(sizeof(player_t));
+    m = malloc(sizeof(map_t));
     if (ac == 2 && my_strcmp(av[1], "-h"))
         return (display_h());
     if (error_handling(ac, av) == ERROR)
         return (ERROR);
     fill_struct();
     if (ac == 2)
-        player_one();
+        player_one(m);
     if (ac == 3)
-        player_two(av);
+        player_two(av, m);
     free(p);
     return (SUCCESS);
 }

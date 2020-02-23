@@ -13,6 +13,7 @@ SRC	=	src/main.c 		\
 		src/error_handling.c	\
 		src/boats_handling.c	\
 		src/check_pos.c		\
+		src/open_file.c		\
 		src/display_h.c		\
 		src/fill_map.c		\
 		src/fill_map_boats.c	\

@@ -38,17 +38,17 @@ typedef struct player
     int temp;
 } player_t;
 
-
 int start(int ac, char **av);
 char **split_pos(char *buffer);
-int player_one(void);
-void player_two(char **av);
+int player_one(map_t *m);
+void player_two(char **av, map_t *m);
 
 int display_h(void);
 int error_handling(int ac, char **av);
 char *clean_buffer(char *buffer);
 int count_boats(char *buffer);
 int check_pos(char **pos);
+char **open_file(char *path);
 
 void my_putchar(char c);
 int my_putstr(char const *str);
@@ -58,8 +58,8 @@ int my_put_nbr(int nb);
 int my_atoi(char const *str);
 void write_error(char *str);
 
-void fill_empty_map(map_t *m);
-void fill_map_w_boats(map_t *m, char **pos);
+char **fill_empty_map(char **map);
+char **fill_map_w_boats(char **map, char **pos);
 
 void handl_sig(int sig, siginfo_t *inf, void *context);
 
