@@ -17,6 +17,7 @@ SRC	=	src/main.c 		\
 		src/display_h.c		\
 		src/fill_map.c		\
 		src/fill_map_boats.c	\
+		src/display_map.c	\
 		src/player_one.c	\
 		src/player_two.c	\
 		util/my_strlen.c	\

@@ -43,15 +43,9 @@ int player_one(map_t *m)
     get_sig_start();
     my_putstr("\nenemy connected\n\n");
     my_putstr("my positions:\n");
-    for (int i = 0; i != 10; i++) {
-        my_putstr(m->map[i]);
-        my_putchar('\n');
-    }
+    display_map(m->map);
     my_putstr("\nenemy's positions:\n");
     m->map_e = fill_empty_map(m->map_e);
-    for (int i = 0; i != 10; i++) {
-        my_putstr(m->map_e[i]);
-        my_putchar('\n');
-    }
+    display_map(m->map_e);
     return (SUCCESS);
 }

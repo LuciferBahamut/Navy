@@ -60,6 +60,7 @@ void write_error(char *str);
 
 char **fill_empty_map(char **map);
 char **fill_map_w_boats(char **map, char **pos);
+void display_map(char **map);
 
 void handl_sig(int sig, siginfo_t *inf, void *context);
 
