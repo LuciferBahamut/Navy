@@ -15,6 +15,8 @@ void handl_sig(int sig, siginfo_t *inf, void *context)
     p->ppid = inf->si_pid;
     if (sig == SIGUSR1 && p->check == 0)
         p->check = 1;
+    if (sig == SIGUSR2 && p->check == 0)
+        p->check = 1;
 }
 
 void get_sig_start(void)
@@ -42,6 +44,7 @@ int player_one(map_t *m)
     my_putstr("\nwaiting for enemy connection...\n");
     get_sig_start();
     my_putstr("\nenemy connected\n\n");
+    kill(p->ppid, SIGUSR2);
     my_putstr("my positions:\n");
     display_map(m->map);
     my_putstr("\nenemy's positions:\n");

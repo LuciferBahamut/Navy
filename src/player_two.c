@@ -7,6 +7,8 @@
 
 #include "navy.h"
 
+player_t *p;
+
 void player_two(char **av, map_t *m)
 {
     int pid = getpid();
@@ -15,8 +17,9 @@ void player_two(char **av, map_t *m)
 
     my_putstr("my_pid:  ");
     my_put_nbr(pid);
-    my_putstr("\nsuccessfully connected\n\n");
     kill(sig1, SIGUSR1);
+    my_putstr("\nsuccessfully connected\n\n");
+    get_sig_start();
     my_putstr("my positions:\n");
     m->map2 = fill_empty_map(m->map2);
     m->map2 = fill_map_w_boats(m->map2, pos);
