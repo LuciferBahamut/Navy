@@ -12,9 +12,10 @@ map_t *m;
 
 void fill_struct(void)
 {
+    p->pid = 0;
     p->pid_2 = 0;
     p->check = 0;
-    p->temp = 0;
+    p->turn = 0;
 }
 
 int start(int ac, char **av)

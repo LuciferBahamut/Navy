@@ -25,17 +25,14 @@ typedef struct map
 {
     char **map;
     char **map_e;
-    char **map2;
-    char **map2_e;
 } map_t;
 
 typedef struct player
 {
     int pid;
     int pid_2;
-    int ppid;
     int check;
-    int temp;
+    int turn;
 } player_t;
 
 int start(int ac, char **av);
