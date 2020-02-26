@@ -9,7 +9,7 @@
 
 player_t *p;
 
-void player_two(char **av, map_t *m)
+int player_two(char **av, map_t *m)
 {
     int pid = getpid();
     int sig1 = my_atoi(av[1]);
@@ -17,14 +17,13 @@ void player_two(char **av, map_t *m)
 
     my_putstr("my_pid:  ");
     my_put_nbr(pid);
-    kill(sig1, SIGUSR1);
+    if (kill(sig1, SIGUSR1) == -1)
+        return (FAIL);
     my_putstr("\nsuccessfully connected\n\n");
     get_sig_start();
-    my_putstr("my positions:\n");
     m->map2 = fill_empty_map(m->map2);
     m->map2 = fill_map_w_boats(m->map2, pos);
-    display_map(m->map2);
-    my_putstr("\nenemy's positions:\n");
     m->map2_e = fill_empty_map(m->map2_e);
-    display_map(m->map2_e);
+    display_all(m->map2, m->map2_e);
+    return (SUCCESS);
 }

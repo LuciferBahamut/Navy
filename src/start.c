@@ -29,7 +29,8 @@ int start(int ac, char **av)
     if (ac == 2)
         player_one(m);
     if (ac == 3)
-        player_two(av, m);
+        if (player_two(av, m) == FAIL)
+            return (SUCCESS);
     free(p);
     return (SUCCESS);
 }

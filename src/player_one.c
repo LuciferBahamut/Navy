@@ -45,10 +45,7 @@ int player_one(map_t *m)
     get_sig_start();
     my_putstr("\nenemy connected\n\n");
     kill(p->ppid, SIGUSR2);
-    my_putstr("my positions:\n");
-    display_map(m->map);
-    my_putstr("\nenemy's positions:\n");
     m->map_e = fill_empty_map(m->map_e);
-    display_map(m->map_e);
+    display_all(m->map, m->map_e);
     return (SUCCESS);
 }

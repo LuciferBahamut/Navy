@@ -7,10 +7,16 @@
 
 #include "navy.h"
 
-void display_map(char **map)
+void display_all(char **map, char **map_e)
 {
+    my_putstr("my positions:\n");
     for (int i = 0; i != 10; i++) {
         my_putstr(map[i]);
+        my_putchar('\n');
+    }
+    my_putstr("\nenemy's positions:\n");
+    for (int i = 0; i != 10; i++) {
+        my_putstr(map_e[i]);
         my_putchar('\n');
     }
 }

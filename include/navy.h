@@ -41,7 +41,7 @@ typedef struct player
 int start(int ac, char **av);
 char **split_pos(char *buffer);
 int player_one(map_t *m);
-void player_two(char **av, map_t *m);
+int player_two(char **av, map_t *m);
 
 int display_h(void);
 int error_handling(int ac, char **av);
@@ -60,7 +60,7 @@ void write_error(char *str);
 
 char **fill_empty_map(char **map);
 char **fill_map_w_boats(char **map, char **pos);
-void display_map(char **map);
+void display_all(char **map, char **map_e);
 
 void get_sig_start(void);
 
@@ -68,6 +68,7 @@ void get_sig_start(void);
 #define ERROR 84
 #define FALSE 0
 #define TRUE 1
+#define FAIL -1
 
 #define READ_SIZE 32
 
