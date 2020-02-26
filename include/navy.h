@@ -63,7 +63,6 @@ char **fill_map_w_boats(char **map, char **pos);
 void display_map(char **map);
 
 void get_sig_start(void);
-//void handl_sig(int sig, siginfo_t *inf, void *context);
 
 #define SUCCESS 0
 #define ERROR 84
