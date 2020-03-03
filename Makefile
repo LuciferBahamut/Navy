@@ -20,6 +20,10 @@ SRC	=	src/main.c 		\
 		src/display_map.c	\
 		src/player_one.c	\
 		src/player_two.c	\
+		src/gnl.c		\
+		src/game1.c		\
+		src/game2.c		\
+		src/receive_and_send.c	\
 		util/my_strlen.c	\
 		util/my_putchar.c	\
 		util/my_putstr.c	\

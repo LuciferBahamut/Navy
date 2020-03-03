@@ -19,4 +19,5 @@ void display_all(char **map, char **map_e)
         my_putstr(map_e[i]);
         my_putchar('\n');
     }
+    my_putchar('\n');
 }

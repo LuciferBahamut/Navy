@@ -33,12 +33,18 @@ typedef struct player
     int pid_2;
     int check;
     int turn;
+    int x;
+    int y;
+    char *str;
 } player_t;
 
 int start(int ac, char **av);
 char **split_pos(char *buffer);
 int player_one(map_t *m);
 int player_two(char **av, map_t *m);
+void game1(map_t *m);
+void game2(map_t *m);
+char *gnl(void);
 
 int display_h(void);
 int error_handling(int ac, char **av);
@@ -57,9 +63,11 @@ void write_error(char *str);
 
 char **fill_empty_map(char **map);
 char **fill_map_w_boats(char **map, char **pos);
+int catoi(char c);
+int catoi1(char c);
 void display_all(char **map, char **map_e);
 
-void get_sig_start(void);
+void receive(void);
 
 #define SUCCESS 0
 #define ERROR 84

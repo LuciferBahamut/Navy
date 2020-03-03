@@ -24,5 +24,7 @@ int player_two(char **av, map_t *m)
     m->map = fill_map_w_boats(m->map, pos);
     m->map_e = fill_empty_map(m->map_e);
     display_all(m->map, m->map_e);
+    for (int i = 0; i != 14; i++)
+        game2(m);
     return (SUCCESS);
 }
