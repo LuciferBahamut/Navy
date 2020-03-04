@@ -9,48 +9,28 @@
 
 player_t *p;
 
-void multi_kill(int nb1, int nb2)
+static void reset_value(void)
 {
-    for (int i = 0; i != nb1; i++) {
-        kill(p->pid_2, SIGUSR1);
-        usleep(100);
-    }
-    kill(p->pid_2, SIGUSR2);
-    for (int i = 0; i != nb2; i++) {
-        kill(p->pid_2, SIGUSR1);
-        usleep(100);
-    }
-}
-
-void hit_or_miss(map_t *m, char *str)
-{
-    if (check == -1)
-        if (m->map[y][x] != '.' || m->map[y][x] != 'x' || m->map[y][x] != 'o') {
-            m->map_e[y][x] = 'x';
-            my_putchar(str[0]);
-            my_putchar(str[1]);
-            my_putstr(": hit\n");
-        }
-    if (check == -2)
-        if (m->map[y][x] != '.' || m->map[y][x] != 'x' || m->map[y][x] != 'o') {
-            m->map_e[y][x] = 'o';
-            my_putchar(str[0]);
-            my_putchar(str[1]);
-            my_putstr(": missed\n");
-        }
+    p->attack = 0;
+    p->x = 0;
+    p->y = 0;
 }
 
 void game1(map_t *m)
 {
+    reset_value();
     p->str = gnl();
-    p->turn = 0;
-    p->x = catoi1(av[0]);
-    p->y = catoi(av[1]) + 1;
-    multi_kill(x, y);
-    rec_hit_miss();
-    hit_or_miss(m, str);
+    multi_kill(catoi1(p->str[0]), catoi(p->str[1]) + 1);
+    receive_answer();
+    usleep(1000);
+    map_update_e(m, catoi1(p->str[0]), catoi(p->str[1]) + 1);
+    usleep(1000);
     my_putstr("waiting for enemy's attack...\n");
-    rec_send();
-    ans_send();
+    multi_receive();
+    p-> count = 0;
+    p->attack = check_co_map(m->map);
+    usleep(1000);
+    send_answer(p->attack);
+    map_update(m);
     display_all(m->map, m->map_e);
 }

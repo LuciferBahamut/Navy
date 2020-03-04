@@ -15,7 +15,7 @@ int player_one(map_t *m)
     my_putstr("my_pid:  ");
     my_put_nbr(p->pid);
     my_putstr("\nwaiting for enemy connection...\n");
-    receive();
+    connect();
     my_putstr("\nenemy connected\n\n");
     m->map_e = fill_empty_map(m->map_e);
     display_all(m->map, m->map_e);

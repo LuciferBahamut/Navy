@@ -13,11 +13,11 @@ int player_two(char **av, map_t *m)
 {
     char **pos = open_file(av[2]);
 
-    p->pid_2 = getpid();
-    p->pid = my_atoi(av[1]);
+    p->pid = getpid();
+    p->pid_2 = my_atoi(av[1]);
     my_putstr("my_pid:  ");
-    my_put_nbr(p->pid_2);
-    if (kill(p->pid, SIGUSR1) == -1)
+    my_put_nbr(p->pid);
+    if (kill(p->pid_2, SIGUSR1) == -1)
         return (FAIL);
     my_putstr("\nsuccessfully connected\n\n");
     m->map = fill_empty_map(m->map);

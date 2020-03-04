@@ -9,17 +9,27 @@
 
 player_t *p;
 
+static void reset_value()
+{
+    p->count = 0;
+    p->x = 0;
+    p->y = 0;
+}
+
 void game2(map_t *m)
 {  
+    reset_value();
     my_putstr("waiting for enemy's attack...\n");
-    rec_send();
-    ans_send();
+    multi_receive();
+    p->attack = check_co_map(m->map);
+    usleep(1000);
+    send_answer(p->attack);
+    map_update(m);
+    usleep(1000);
     p->str = gnl();
-    p->turn = 0;
-    p->x = catoi1(av[0]);
-    p->y = catoi(av[1]) + 1;
-    multi_kill(x, y);
-    rec_hit_miss();
-    hit_or_miss(m, str);
+    multi_kill(catoi1(p->str[0]), catoi(p->str[1]) + 1);
+    p->attack = 0;
+    receive_answer();
+    map_update_e(m, catoi1(p->str[0]), catoi(p->str[1]) + 1);
     display_all(m->map, m->map_e);
 }

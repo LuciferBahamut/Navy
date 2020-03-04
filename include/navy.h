@@ -32,9 +32,10 @@ typedef struct player
     int pid;
     int pid_2;
     int check;
-    int turn;
+    int attack;
     int x;
     int y;
+    int count;
     char *str;
 } player_t;
 
@@ -67,7 +68,16 @@ int catoi(char c);
 int catoi1(char c);
 void display_all(char **map, char **map_e);
 
-void receive(void);
+void map_update_e(map_t *m, int x, int y);
+void map_update(map_t *m);
+int check_co_map(char **map);
+
+void multi_kill(int nb1, int nb2);
+void send_answer(int attack);
+
+void connect(void);
+void multi_receive();
+void receive_answer();
 
 #define SUCCESS 0
 #define ERROR 84

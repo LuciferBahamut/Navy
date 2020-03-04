@@ -23,7 +23,10 @@ SRC	=	src/main.c 		\
 		src/gnl.c		\
 		src/game1.c		\
 		src/game2.c		\
-		src/receive_and_send.c	\
+		src/connect.c		\
+		src/send.c		\
+		src/receive.c		\
+		src/map_update.c	\
 		util/my_strlen.c	\
 		util/my_putchar.c	\
 		util/my_putstr.c	\
@@ -52,14 +55,14 @@ clean	:
 		rm -f $(OBJ)
 
 fclean	:	clean
-		rm -f $(NAME)
-		rm -f *# \
-		rm -f src/*# \
-		rm -f include/*# \
-		rm -f *~ \
-		rm -f src/*~ \
-		rm -f include/*~ \
-		rm -f *.gcda \
+		rm -f $(NAME)		\
+		rm -f *# 		\
+		rm -f src/*# 		\
+		rm -f include/*# 	\
+		rm -f *~ 		\
+		rm -f src/*~ 		\
+		rm -f include/*~ 	\
+		rm -f *.gcda 		\
 		rm -f *.gcno
 
 re	:	fclean all
