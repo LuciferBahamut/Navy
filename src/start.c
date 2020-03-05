@@ -19,6 +19,7 @@ void fill_struct(void)
     p->count = 0;
     p->x = 0;
     p->y = 0;
+    p->check_eof = 0;
 }
 
 int start(int ac, char **av)

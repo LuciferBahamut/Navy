@@ -21,6 +21,8 @@ int player_one(map_t *m)
     m->map_e = fill_empty_map(m->map_e);
     display_all(m->map, m->map_e);
     while (game1(m) != TRUE);
+    if (p->check_eof == 1)
+        return (SUCCESS);
     display_all(m->map, m->map_e);
     if (count_hit(m->map_e) == 14) {
         my_putstr("I won\n");

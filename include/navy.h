@@ -39,7 +39,7 @@ typedef struct player
     char *str;
     int defeat;
     int turn;
-    int i;
+    int check_eof;
 } player_t;
 
 int start(int ac, char **av);
@@ -51,6 +51,7 @@ int game2(map_t *m);
 int win_check(char **map);
 int count_hit(char **map);
 char *gnl(void);
+int quit_game(void);
 
 int display_h(void);
 int error_handling(int ac, char **av);
@@ -81,7 +82,7 @@ void multi_kill(int nb1, int nb2);
 void send_answer(int attack);
 
 void connect(void);
-void multi_receive(void);
+int multi_receive(void);
 void receive_answer(void);
 
 #define SUCCESS 0

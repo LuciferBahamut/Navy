@@ -20,20 +20,21 @@ int game2(map_t *m)
 {
     reset_value();
     my_putstr("waiting for enemy's attack...\n");
-    multi_receive();
+    if (multi_receive() == ERROR)
+        return (TRUE);
     p->attack = check_co_map(m->map);
     usleep(1000);
     send_answer(p->attack);
     map_update(m);
     usleep(1000);
-    p->str = gnl();
+    if ((p->str = gnl()) == NULL)
+        return (quit_game());
     multi_kill(catoi1(p->str[0]), catoi(p->str[1]) + 1);
     p->attack = 0;
     receive_answer();
     map_update_e(m, catoi1(p->str[0]), catoi(p->str[1]) + 1);
     usleep(1000);
-    p->i = win_check(m->map_e);
-    if (p->i == TRUE)
+    if (win_check(m->map_e) == TRUE)
         return (TRUE);
     display_all(m->map, m->map_e);
     return (FALSE);

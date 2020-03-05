@@ -39,5 +39,7 @@ int player_two(char **av, map_t *m)
     m->map_e = fill_empty_map(m->map_e);
     display_all(m->map, m->map_e);
     while (game2(m) != TRUE);
+    if (p->check_eof == 1)
+        return (SUCCESS);
     return (end_player_two(m));
 }
