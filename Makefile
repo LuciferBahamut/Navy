@@ -23,6 +23,7 @@ SRC	=	src/main.c 		\
 		src/gnl.c		\
 		src/game1.c		\
 		src/game2.c		\
+		src/win_check.c		\
 		src/connect.c		\
 		src/send.c		\
 		src/receive.c		\

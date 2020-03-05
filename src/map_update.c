@@ -38,5 +38,5 @@ void map_update(map_t *m)
     if (p->attack == 1)
         m->map[p->y][p->x] = 'x';
     if (p->attack == 2)
-        m->map_e[p->y][p->x] = 'o';
+        m->map[p->y][p->x] = 'o';
 }

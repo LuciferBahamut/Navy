@@ -37,6 +37,8 @@ typedef struct player
     int y;
     int count;
     char *str;
+    int defeat;
+    int turn;
 } player_t;
 
 int start(int ac, char **av);
@@ -45,6 +47,7 @@ int player_one(map_t *m);
 int player_two(char **av, map_t *m);
 void game1(map_t *m);
 void game2(map_t *m);
+int win_check(char **map);
 char *gnl(void);
 
 int display_h(void);
@@ -76,8 +79,8 @@ void multi_kill(int nb1, int nb2);
 void send_answer(int attack);
 
 void connect(void);
-void multi_receive();
-void receive_answer();
+void multi_receive(void);
+void receive_answer(void);
 
 #define SUCCESS 0
 #define ERROR 84

@@ -23,6 +23,8 @@ void fill_struct(void)
 
 int start(int ac, char **av)
 {
+    int ret = 0;
+
     p = malloc(sizeof(player_t));
     m = malloc(sizeof(map_t));
     if (ac == 2 && my_strcmp(av[1], "-h"))
@@ -31,10 +33,10 @@ int start(int ac, char **av)
         return (ERROR);
     fill_struct();
     if (ac == 2)
-        player_one(m);
+        ret = player_one(m);
     if (ac == 3)
-        if (player_two(av, m) == FAIL)
+        if ((ret = player_two(av, m)) == FAIL)
             return (SUCCESS);
     free(p);
-    return (SUCCESS);
+    return (ret);
 }

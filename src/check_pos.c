@@ -53,22 +53,12 @@ int is_right_size(char **pos)
 
 int comp_tab_nb(int *tab)
 {
-    if (tab[0] != 3) {
+    if (tab[0] != 3 || tab[1] != 4) {
         free (tab);
         write_error(STR_ERROR_OVERLAP);
         return (ERROR);
     }
-    if (tab[1] != 4) {
-        free (tab);
-        write_error(STR_ERROR_OVERLAP);
-        return (ERROR);
-    }
-    if (tab[2] != 5) {
-        free (tab);
-        write_error(STR_ERROR_OVERLAP);
-        return (ERROR);
-    }
-    if (tab[3] != 6) {
+    if (tab[2] != 5 || tab[3] != 6) {
         free (tab);
         write_error(STR_ERROR_OVERLAP);
         return (ERROR);

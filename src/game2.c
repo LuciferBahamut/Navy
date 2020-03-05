@@ -9,7 +9,7 @@
 
 player_t *p;
 
-static void reset_value()
+static void reset_value(void)
 {
     p->count = 0;
     p->x = 0;
@@ -17,7 +17,7 @@ static void reset_value()
 }
 
 void game2(map_t *m)
-{  
+{
     reset_value();
     my_putstr("waiting for enemy's attack...\n");
     multi_receive();
