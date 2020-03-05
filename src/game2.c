@@ -16,7 +16,7 @@ static void reset_value(void)
     p->y = 0;
 }
 
-void game2(map_t *m)
+int game2(map_t *m)
 {
     reset_value();
     my_putstr("waiting for enemy's attack...\n");
@@ -31,5 +31,10 @@ void game2(map_t *m)
     p->attack = 0;
     receive_answer();
     map_update_e(m, catoi1(p->str[0]), catoi(p->str[1]) + 1);
+    usleep(1000);
+    p->i = win_check(m->map_e);
+    if (p->i == TRUE)
+        return (TRUE);
     display_all(m->map, m->map_e);
+    return (FALSE);
 }

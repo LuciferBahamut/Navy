@@ -16,7 +16,7 @@ static void reset_value(void)
     p->y = 0;
 }
 
-void game1(map_t *m)
+int game1(map_t *m)
 {
     reset_value();
     p->str = gnl();
@@ -32,5 +32,10 @@ void game1(map_t *m)
     usleep(1000);
     send_answer(p->attack);
     map_update(m);
+    usleep(1000);
+    p->i = win_check(m->map_e);
+    if (p->i == TRUE)
+        return (TRUE);
     display_all(m->map, m->map_e);
+    return (FALSE);
 }

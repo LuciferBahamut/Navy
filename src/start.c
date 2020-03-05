@@ -38,5 +38,6 @@ int start(int ac, char **av)
         if ((ret = player_two(av, m)) == FAIL)
             return (SUCCESS);
     free(p);
+    free(m);
     return (ret);
 }

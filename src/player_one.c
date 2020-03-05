@@ -11,8 +11,6 @@ player_t *p;
 
 int player_one(map_t *m)
 {
-    int i = 0;
-
     p->turn = 1;
     p->pid = getpid();
     my_putstr("my_pid:  ");
@@ -22,9 +20,9 @@ int player_one(map_t *m)
     my_putstr("\nenemy connected\n\n");
     m->map_e = fill_empty_map(m->map_e);
     display_all(m->map, m->map_e);
-    for (i = win_check(m->map_e); i != TRUE; i = win_check(m->map_e))
-        game1(m);
-    if (i == TRUE) {
+    while (game1(m) != TRUE);
+    display_all(m->map, m->map_e);
+    if (count_hit(m->map_e) == 14) {
         my_putstr("I won\n");
         return (0);
     }

@@ -39,15 +39,17 @@ typedef struct player
     char *str;
     int defeat;
     int turn;
+    int i;
 } player_t;
 
 int start(int ac, char **av);
 char **split_pos(char *buffer);
 int player_one(map_t *m);
 int player_two(char **av, map_t *m);
-void game1(map_t *m);
-void game2(map_t *m);
+int game1(map_t *m);
+int game2(map_t *m);
 int win_check(char **map);
+int count_hit(char **map);
 char *gnl(void);
 
 int display_h(void);
