@@ -73,16 +73,17 @@ int is_overlapping(char **pos)
     m->map = fill_empty_map(m->map);
     m->map = fill_map_w_boats(m->map, pos);
     for (int i = 0; m->map[i]; i++)
-        for (int j = 0; m->map[i][j]; j++) {
-            if (m->map[i][j] == '2')
-                tab[0] += 1;
-            if (m->map[i][j] == '3')
-                tab[1] += 1;
-            if (m->map[i][j] == '4')
-                tab[2] += 1;
-            if (m->map[i][j] == '5')
-                tab[3] += 1;
-        }
+        for (int j = 0; m->map[i][j]; j++)
+            switch (m->map[i][j]) {
+            case '2' : tab[0] += 1;
+                break;
+            case '3' : tab[1] += 1;
+                break;
+            case '4' : tab[2] += 1;
+                break;
+            case '5' : tab[3] += 1;
+                break;
+            }
     if (comp_tab_nb(tab) == ERROR) {
         free (m);
         return (ERROR);
