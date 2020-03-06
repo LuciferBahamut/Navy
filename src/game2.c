@@ -23,6 +23,7 @@ int game2(map_t *m)
     if (multi_receive() == ERROR)
         return (TRUE);
     p->attack = check_co_map(m->map);
+    print_attack();
     usleep(1000);
     send_answer(p->attack);
     map_update(m);

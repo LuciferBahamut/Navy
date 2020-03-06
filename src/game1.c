@@ -25,12 +25,12 @@ int game1(map_t *m)
     receive_answer();
     usleep(1000);
     map_update_e(m, catoi1(p->str[0]), catoi(p->str[1]) + 1);
-    usleep(1000);
     my_putstr("waiting for enemy's attack...\n");
     if (multi_receive() == ERROR)
         return (TRUE);
     p-> count = 0;
     p->attack = check_co_map(m->map);
+    print_attack();
     usleep(1000);
     send_answer(p->attack);
     map_update(m);

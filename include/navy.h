@@ -80,7 +80,7 @@ int check_co_map(char **map);
 
 void multi_kill(int nb1, int nb2);
 void send_answer(int attack);
-
+void print_attack(void);
 void connect(void);
 int multi_receive(void);
 void receive_answer(void);
