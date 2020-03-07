@@ -33,11 +33,13 @@ int start(int ac, char **av)
     if (error_handling(ac, av) == ERROR)
         return (ERROR);
     fill_struct();
-    if (ac == 2)
-        ret = player_one(m);
-    if (ac == 3)
-        if ((ret = player_two(av, m)) == FAIL)
-            return (SUCCESS);
+    if (ac >= 2) {
+        if (ac == 2)
+            ret = player_one(m);
+        if (ac == 3)
+            if ((ret = player_two(av, m)) == FAIL)
+                return (SUCCESS);
+    }
     free(p);
     free(m);
     return (ret);
