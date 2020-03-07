@@ -44,12 +44,12 @@ void handl_sig_mul_rec(int sig, siginfo_t *inf, void *context)
         p->check_eof += 1;
     if (sig == SIGUSR2)
         p->count += 1;
-    if (p->count == 1)
-        if (sig == SIGUSR1)
+    if (sig == SIGUSR1) {
+        if (p->count == 1)
             p->x += 1;
-    if (p->count == 2)
-        if (sig == SIGUSR1)
+        if (p->count == 2)
             p->y += 1;
+    }
 }
 
 int multi_receive(void)
