@@ -67,6 +67,8 @@ int win_check(char **map)
     if (hit != 14)
         return (defeat_check());
     else {
+        if (p->turn == 0)
+            receive_win();
         usleep(2000);
         kill(p->pid_2, SIGUSR1);
         return (TRUE);
