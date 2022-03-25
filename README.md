@@ -1,5 +1,5 @@
 # Navy
-### {EPITECH} -- First year -- Semester 2 -- fiveth PSU project
+### {EPITECH} -- First year -- Semester 2 -- fifth PSU project
 
 2nd semester PSU unit : Grade C
 
